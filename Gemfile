@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'figaro'
 gem 'bootstrap-sass', '~> 3.3.5.1'
+gem 'faker', '~> 1.4.3'
 
 group :development, :test do
 	gem 'sqlite3'
