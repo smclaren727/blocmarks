@@ -11,6 +11,7 @@
 	<div class="container">
 		<ul class ="nav nav-tabs">
 			<li><%= link_to "Blocmarks", root_path %></li>
+			<li><%= link_to "Topics", topics_path%></li>
 
 			<div class="pull-right user-info">
 				<% if current_user  %>
@@ -40,6 +41,8 @@
 		<% end %>
 
 <%= yield %>
+
+        <%= debug(params) if Rails.env.development? %>
 
 	</div>
 </body>

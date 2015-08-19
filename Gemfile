@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -13,6 +12,9 @@ gem 'devise'
 gem 'figaro'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'faker', '~> 1.4.3'
+gem 'pry', '~> 0.10.1'
+gem 'pry-doc', '~> 0.8.0'
+gem 'ruby_parser', '~> 3.7.1'
 
 group :development, :test do
 	gem 'sqlite3'
