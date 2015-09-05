@@ -4,22 +4,22 @@ class BookmarksController < ApplicationController
   end
 
   def edit
-		@topic = Topic.find(params[:topic_id])
-		@bookmark = Bookmark.find(params[:id])
+    @topic = Topic.find(params[:topic_id])
+    @bookmark = Bookmark.find(params[:id])
   end
 
-	def update
-		@topic = Topic.find(params[:topic_id])
-		@bookmark = Bookmark.find(params[:id])
+  def update
+    @topic = Topic.find(params[:topic_id])
+    @bookmark = Bookmark.find(params[:id])
 
-		@bookmark.update_attributes(params.require(:bookmark).permit(:url))
+    @bookmark.update_attributes(params.require(:bookmark).permit(:url))
 
-		redirect_to @topic
-	end
+    redirect_to @topic
+  end
 
   def create
-		@topic = Topic.find(params[:topic_id])
-		@bookmark = Bookmark.new(params.require(:bookmark).permit(:url))
+    @topic = Topic.find(params[:topic_id])
+    @bookmark = Bookmark.new(params.require(:bookmark).permit(:url))
     @bookmark.topic = @topic 
 
     if @bookmark.save
@@ -31,16 +31,16 @@ class BookmarksController < ApplicationController
     end
   end
 
-	def destroy
-		@topic = Topic.find(params[:topic_id])
-		@bookmark = Bookmark.find(params[:id])
+  def destroy
+    @topic = Topic.find(params[:topic_id])
+    @bookmark = Bookmark.find(params[:id])
 
-		if @bookmark.destroy
-			flash[:notice] = "Bookmark was deleted"
-		else
-			flash[:error] = "The bookmark could not be deleted. Please try again."
-		end
+    if @bookmark.destroy
+      flash[:notice] = "Bookmark was deleted"
+    else
+      flash[:error] = "The bookmark could not be deleted. Please try again."
+    end
 
-		redirect_to @topic
-	end
+    redirect_to @topic
+  end
 end

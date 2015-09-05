@@ -29,10 +29,10 @@ topics = Topic.all
 
 # Create Bookmarks
 50.times do
-	bookmark = Bookmark.create(
-		url: Faker::Internet.url,
-		topic: topics.sample)
-#		user: users.sample)
+  bookmark = Bookmark.create(
+    url: Faker::Internet.url,
+    topic: topics.sample)
+#   user: users.sample)
 end
 bookmarks = Bookmark.all
 
