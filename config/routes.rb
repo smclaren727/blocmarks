@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   end
 
   root to: "home#index"
+
+  post :incoming, to: 'incoming#create'
 end
